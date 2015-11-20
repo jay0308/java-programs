@@ -1,0 +1,20 @@
+interface Check
+{
+	class Abc
+	{
+		void method()
+		{
+			System.out.println("Chalo Dekhten hai");
+		}
+	}
+	 void method1();
+}
+class Mno implements Check
+{
+	public static void main(String... args)
+	{
+		Mno s=new Mno();
+		Mno.Abc a=s.new Abc();
+		a.method();
+	}
+}

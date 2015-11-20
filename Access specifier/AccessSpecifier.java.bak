@@ -1,0 +1,12 @@
+package itispackage;
+class AccessSpecifier 
+{
+	public AccessSpecifier()
+	{
+		System.out.println("Public specifier");
+	}
+	public static void main(String[] args) 
+	{
+		AccessSpecifier a=new AccessSpecifier();
+	}
+}

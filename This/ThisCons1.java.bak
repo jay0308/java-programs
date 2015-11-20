@@ -1,0 +1,33 @@
+class B 
+{
+	ThisCons1 obj1;
+
+	B( ThisCons1 obj2 )
+	{
+		this.obj1=obj2;
+		B b=new B();
+	}
+
+
+
+   void display()
+   {
+	    System.out.println(obj1.data);
+   }
+}
+
+class ThisCons1
+{
+	int data=10;
+	ThisCons1()
+	{
+		B b=new B(this);
+          b.display();
+    }
+
+	public static void main(String[] args)
+	{
+		ThisCons1 a=new ThisCons1();
+    }
+}
+

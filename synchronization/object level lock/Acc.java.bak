@@ -1,0 +1,53 @@
+public class Acc implements Runnable
+{
+	Account acc=new Account();
+	public static void main(String[] args) 
+	{
+		Acc r=new Acc();
+		Thread one =new Thread(r,"Lucky");
+		Thread two =new Thread(r,"Fred");
+		one.start();
+		two.start();
+	}
+	public void run()
+	{
+		for(int x=0;x<5;x++)
+		{
+			makeWithdraw(10);
+			if(acc.getBalance()<0)
+				System.out.println("Account is Overdrawn");
+		}
+	}
+	public void makeWithdraw(int amt)
+	{
+		if(acc.getbalance()>=amt)
+		{
+			System.out.println(Thread.currentThread().getName()+" is going to withdraw");
+			try{
+			Thread.sleep(500);}
+			catch(InterruptedException e){
+			System.out.println("Interrupted exception");}
+			acc.withdraw(amt);	
+			System.out.println(Thread.currentThread().getName()+" completes the withdraw");
+
+		}
+				
+		else
+		{
+			System.out.println(Thread.currentThread().getName()+" to withdraw "+acc.getBalance());
+		}	
+	}
+}
+class Account
+{
+	private int balance=50;
+	public int getBalance()
+	{
+		return balance;
+	}
+	public void withdraw(int amt)
+	{
+		balance=balance-amt;
+	}
+}
+ 

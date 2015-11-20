@@ -1,0 +1,28 @@
+class PairSum 
+{
+
+	public static void main(String[] args) 
+	{
+		int[] arr={2,5,-1,6,7};
+		int n=7,c=0,i=0,j=0;
+		boolean flag=false;
+		outer:
+		while(c<=arr.length-1)
+		{
+			for( i=c,j=arr.length-1;i<(arr.length+c)/2;i++,j--)
+			{
+				if(arr[i]+arr[j]==n)
+				{
+					flag=true;
+					break outer;
+				}
+			}
+			c++;
+		}
+		if(flag)
+		System.out.println("pair found : "+arr[i]+"-"+arr[j]);
+		else
+			System.out.println("Pair not found!!");
+
+	}
+}

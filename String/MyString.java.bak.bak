@@ -1,0 +1,38 @@
+class MyString 
+{
+	
+	public char charat(int index,String s)
+	{
+		char[] ch=s.toCharArray();
+		return ch[index];
+	}
+	public String toupper(String s)
+	{
+		int a;
+		char[] ch=s.toCharArray();
+		for(int i=0;i<ch.length;i++)
+		{
+			if(ch[i]>96&&ch[i]<124)
+			{
+				a=ch[i];
+				ch[i]=(char)(a-32);
+				
+			}
+			System.out.print(ch[i]);
+
+		}
+		return String.valueOf(ch);
+	}
+	public static void main(String[] args) 
+	{
+		String s="My string class" ;
+		MyString m=new MyString();
+		char c=m.charat(3,s);	
+		//	char[] ch=s.toCharArray();
+		//for(char i:ch)
+		System.out.println(c);
+		String s1=m.toupper(s);
+		System.out.println(s1);
+
+	}
+}

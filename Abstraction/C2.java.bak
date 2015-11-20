@@ -1,0 +1,24 @@
+abstract class A1 
+{
+	abstract void display();	
+}
+
+abstract class B1 extends A1
+{
+	abstract void display();
+}
+
+class C2 extends B1 
+{
+		
+	void display()
+	{
+		System.out.println("C2");
+	}
+
+	public static void main(String... args)
+	{
+		C2 obj=new C2();
+	    A1 obj =new A1();                                                                                                                         b vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvbbvvbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb	obj.display();
+    }
+}

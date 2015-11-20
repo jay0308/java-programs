@@ -1,0 +1,23 @@
+import java.io.*;
+class Emp implements Serializable
+{
+	int i=10;
+	transient int j=20;
+}
+class SerializeDemo
+{
+	public static void main(String... args)throws Exception
+	{
+		//serialization....
+		Emp e1=new Emp();
+		FileOutputStream fos=new FileOutputStream("abc.ser");
+		ObjectOutputStream oos =new ObjectOutputStream(fos);
+		oos.writeObject(e1);
+
+		//deserialization....
+		FileInputStream fis =new FileInputStream("abc.ser");
+		ObjectInputStream ois=new ObjectInputStream(fis);
+		Emp  e2=(Emp)ois.readObject();
+		System.out.println("i= "+e2.i+"  j= "+e2.j);
+	}
+}

@@ -1,0 +1,24 @@
+//requirement of calling start method of thread class as well as overridden start
+class MyThread extends Thread
+{
+	public void run()
+	{
+		System.out.println("run()");
+	}
+	public void start()
+	{
+		super.start();
+		System.out.println("start()");
+	}
+}
+class ThreadDemo5
+{
+	public static void main(String[] args) 
+	{
+		MyThread t=new MyThread();
+			t.start();
+		
+		System.out.println("main mehtid");
+		t.start();
+	}
+}

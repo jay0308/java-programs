@@ -1,0 +1,27 @@
+class SysOut
+{
+	SysOut()
+	{
+		this("dear");
+		System.out.println("I am in Default Constructor");
+		
+	}
+	SysOut(String name)
+	{
+		this(143);
+		System.out.println("Hello"+name+"u r in paramatrized Constructor");
+		
+
+	}
+	SysOut(int x)
+	{
+		System.out.println("now we are in next level of Constructor chaining");
+		System.out.println(x);
+	}
+	public static void main(String[] args) 
+	{
+	
+			new SysOut(); 
+
+	}
+}

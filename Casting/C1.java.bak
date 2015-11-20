@@ -1,0 +1,32 @@
+interface A1 
+{
+	void display();
+}
+
+class B1 implements A1
+{
+	public void display()
+	{
+		System.out.println("I am in class B");
+	}
+}
+
+class C1 extends B1
+{
+	public void display()
+	{
+		System.out.println("I am in class C");
+	}
+    
+	public void show()
+	{
+		System.out.println("I am in show of C");
+	}
+
+	public static void main(String... args)
+	{
+		A1 aRef=new A1();
+		((B1)aRef).display();
+	    //aRef.show();
+	}
+}
